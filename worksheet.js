@@ -20,6 +20,7 @@ var addOne = function(num) {
 var doubleNum = function(num) {
 	num * 2
 }
+	doubleNum(2)
 
 /**
  * PART 2
@@ -28,10 +29,21 @@ var doubleNum = function(num) {
  * inputs and computes the sum of those two numbers.
  */
 
+var sum = function(num1,num2) {
+	num1 + num2
+}
+
  // PART 2.5
 
 // modify your sum() function so that it will return null
 // if either of the inputs is not a number.
+
+var sum = function(num1,num2) {
+	if (typeof num1 || num2 !== 'number') {
+		return null
+	}
+	num1 + num2
+}
 
 // PART 3
 
@@ -39,26 +51,50 @@ var doubleNum = function(num) {
 // as inputs and returns the average of the two. To avoid
 // repeating yourself, use your sum function inside 
 // of your average function.
-
+var average = function(num1,num2) {
+	sum / 2
+}
 
 // Part 4
 
 // Write a function called isNegative that will tell 
 // whether a number is negative or not.
-
+var isNegative = function(num) {
+	if (num < 0) {
+		return true
+	}
+}
 
 // Now, modify your sum function again, so that it 
 // will return null if any of the inputs is negative.
 // To avoid repeating yourself, use your isNegative 
 // function inside your sum funciton ***
-
-
+var sum = function(num1,num2) {
+	if (typeof num1 || num2 !== 'number') {
+		return null
+	}
+	else if (isNegative = true) {
+		return null
+	}
+	num1 + num2
+}
 // Part 5
 
 // Write a function that will find the minimum of four 
 // input numbers. You can do it using nested if statements,
 // boolean operators, or both (but not neither).
-
+var min = function(num1,num2,num3,num4) {
+	if (num1 < num2 && num1 < num3 && num1 < num4) {
+		return num1
+	}
+	else if (num2 < num1 && num2 < num3 && num2 < num4) {
+		return num2
+	}
+	else if (num3 < num1 && num3 < num2 && num3 < num4) {
+		return num3
+	}
+	return num4
+}
 
 // Part 6
 
@@ -66,6 +102,17 @@ var doubleNum = function(num) {
 // return true if either input is a string, but not 
 // both or neither. 
 
+var oneString = function(input1,input2) {
+	if (input1 && input2 === 'string') {
+		return false
+	}
+	else if (input1 && input2 !== 'string') {
+		return false
+	}
+	else {
+		return true
+	}
+}
 
 // HARD MODE
 
@@ -78,8 +125,8 @@ var doubleNum = function(num) {
 // modify global variables, although that's not a good
 // pattern for production code.
 
-var doTwice = function() {
-
+var doTwice = function(helloWorld) {
+	helloWorld * 2
 }
 
 var helloWorld = function() {
@@ -97,8 +144,10 @@ doTwice(helloWorld) // should print 'hello world' to the console twice.
 // the value of a certain global variable, called ORACLE, is 
 // "YES." Otherwise, it will does nothing.
 
-var conditionallyInvoke = function() {
-
+var conditionallyInvoke = function(helloWorld) {
+if (ORACLE = 'YES') {
+	console.log('hello world')
+}
 }
 
 var ORACLE = 'NO'
